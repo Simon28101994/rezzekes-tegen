@@ -100,6 +100,46 @@ function renderMatches() {
   });
 }
 
+// ── Upcoming games ───────────────────────────────────────────
+function parseDateTime(dateStr, timeStr) {
+  const [d, m, y] = dateStr.split('/');
+  const [h, min]  = (timeStr || '00:00').split(':');
+  return new Date(y, m - 1, d, h, min);
+}
+
+function renderUpcoming() {
+  const grid  = document.getElementById('upcoming-grid');
+  const empty = document.getElementById('upcoming-empty');
+  grid.innerHTML = '';
+
+  const now = new Date();
+  const upcoming = (typeof UPCOMING_GAMES !== 'undefined' ? UPCOMING_GAMES : [])
+    .filter(g => parseDateTime(g.date, g.time) >= now)
+    .sort((a, b) => parseDateTime(a.date, a.time) - parseDateTime(b.date, b.time));
+
+  if (!upcoming.length) {
+    grid.style.display  = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  grid.style.display  = 'grid';
+  empty.style.display = 'none';
+
+  upcoming.forEach(g => {
+    const label = g.home
+      ? `Rezzekes Tegen – ${g.opponent}`
+      : `${g.opponent} – Rezzekes Tegen`;
+    const card = document.createElement('div');
+    card.className = 'upcoming-card';
+    card.innerHTML = `
+      <div><span class="u-date">${g.date}</span><span class="u-time">${g.time}</span></div>
+      <div class="u-match">${label}</div>
+      <span class="u-tag ${g.home ? 'home' : 'away'}">${g.home ? 'Thuis' : 'Uit'}</span>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 // ── Match detail modal ───────────────────────────────────────
 function openMatchModal(idx) {
   const m    = MATCHES[idx];
@@ -372,6 +412,7 @@ function openTab(e, id) {
 (function init() {
   const stats = buildStats();
   renderSummary(stats);
+  renderUpcoming();
   renderMatches();
   renderPlayers(stats);
   renderScorers(stats);

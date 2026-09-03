@@ -44,6 +44,17 @@ const PLAYERS = [
 
 // ── Leaderboard ───────────────────────────────────────────────
 // Update this after each official ranking publication.
+// ── Upcoming games ───────────────────────────────────────────
+// Add future fixtures here as they're announced (e.g. from the
+// club's .ics schedule). Once a game is played, remove it here
+// and add the result as a new entry in MATCHES below.
+// Each game: { date: 'DD/MM/YYYY', time: 'HH:MM', opponent: 'Club naam', home: true/false }
+const UPCOMING_GAMES = [
+  { date: '09/09/2026', time: '22:00', opponent: 'Balkanos',     home: false },
+  { date: '23/09/2026', time: '22:00', opponent: 'Pottekestamp', home: true  },
+  { date: '30/09/2026', time: '21:00', opponent: 'De Skoeten',   home: true  },
+];
+
 const LEADERBOARD = {
   publishedDate: '02/09/2026',
   teams: [

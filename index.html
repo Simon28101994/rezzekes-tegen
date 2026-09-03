@@ -120,6 +120,47 @@
       letter-spacing: .5px;
     }
 
+    /* ── Upcoming games ── */
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .upcoming-card {
+      background: var(--mid);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .upcoming-card .u-date {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .upcoming-card .u-time {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-left: .4rem;
+    }
+    .upcoming-card .u-match {
+      margin-top: .4rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .u-tag {
+      display: inline-block;
+      margin-top: .6rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .u-tag.home { background: #1a3d4d; color: #4fc3f7; }
+    .u-tag.away { background: #3a1a4d; color: #ba68c8; }
+
     /* ── Tables ── */
     .table-wrap { overflow-x: auto; }
     table {
@@ -329,6 +370,12 @@
 ══════════════════════════════════════════ -->
 <section id="tab-matches" class="tab-panel active">
   <div class="stat-grid" id="summary-boxes"></div>
+
+  <h2>Aankomende wedstrijden</h2>
+  <div class="upcoming-grid" id="upcoming-grid"></div>
+  <div id="upcoming-empty" class="empty" style="display:none">
+    <span>📅</span>Geen aankomende wedstrijden gepland.
+  </div>
 
   <h2>Wedstrijdgeschiedenis</h2>
   <div class="table-wrap">
