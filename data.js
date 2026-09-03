@@ -42,6 +42,25 @@ const PLAYERS = [
   { nr: 16, firstName: 'Jonathan',  lastName: 'Van Laethem'        },
 ];
 
+// ── Leaderboard ───────────────────────────────────────────────
+// Update this after each official ranking publication.
+const LEADERBOARD = {
+  publishedDate: '02/09/2026',
+  teams: [
+    { pos:  1, name: "REZZEKES TEGEN",   gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor: 13, goalsAgainst:  3, saldo:  10, ptn: 3 },
+    { pos:  2, name: "BLACK'XTRAS",      gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
+    { pos:  2, name: "STB85",            gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
+    { pos:  4, name: "BALKANOS",         gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  4, name: "BIEMEN",           gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  4, name: "DE SKOETEN",       gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  4, name: "DE WEKE TINGELS",  gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  4, name: "GALACTICOS",       gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  4, name: "LA FAMILIA",       gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  4, name: "POTTEKESTAMP",     gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos: 11, name: "COCKY'S",          gsp: 1, gew: 0, gel: 0, verl: 1, goalsFor:  3, goalsAgainst: 13, saldo: -10, ptn: 0 },
+  ]
+};
+
 const MATCHES = [
   // ── Match 1 – 02/09/2026 ──────────────────────────────────
   {
@@ -51,7 +70,7 @@ const MATCHES = [
     goalsAgainst: 3,
     players: [
       { nr:  1, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
-      { nr:  2, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
+      { nr:  2, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
       { nr:  3, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Joran Lemaire
       { nr:  4, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
       { nr:  5, present: true,  goals: 4, yellowCards: 0, redCards: 0 }, // Matthias Bonte
