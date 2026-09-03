@@ -219,19 +219,6 @@
 
     /* ── Leaderboard own team highlight ── */
     #leaderboard-tbody tr[style] td { background: rgba(245,195,0,.06); }
-
-    /* ── Details link in match rows ── */
-    .details-link {
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .details-link:hover { text-decoration: underline; }
-
-    /* ── Leaderboard own team highlight ── */
-    #leaderboard-tbody tr[style] td { background: rgba(245,195,0,.06); }
   </style>
 </head>
 <body>
@@ -253,7 +240,6 @@
   <button class="tab-btn"        onclick="openTab(event,'tab-scorers')">🥇 Topschutters</button>
   <button class="tab-btn"        onclick="openTab(event,'tab-cards')">🟨 Kaarten</button>
   <button class="tab-btn"        onclick="openTab(event,'tab-leaderboard')">📊 Klassement</button>
-  <button class="tab-btn"        onclick="openTab(event,'tab-leaderboard')">📊 Klassement</button>
 </nav>
 
 <!-- ══════════════════════════════════════════
@@ -273,7 +259,6 @@
           <th>Score</th>
           <th>Resultaat</th>
           <th>Aanwezig</th>
-          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -299,9 +284,6 @@
           <th>Aanwezig</th>
           <th>Wedstrijden</th>
           <th>%</th>
-          <th>⚽ Goals</th>
-          <th><span class="card-y"></span> Geel</th>
-          <th><span class="card-r"></span> Rood</th>
           <th>⚽ Goals</th>
           <th><span class="card-y"></span> Geel</th>
           <th><span class="card-r"></span> Rood</th>
