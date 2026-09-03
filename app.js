@@ -59,6 +59,12 @@ function renderSummary(stats) {
 }
 
 // ── Match history table ──────────────────────────────────────
+function parseDate(str) {
+  // DD/MM/YYYY → comparable number YYYYMMDD
+  const [d, m, y] = str.split('/');
+  return parseInt(`${y}${m.padStart(2,'0')}${d.padStart(2,'0')}`, 10);
+}
+
 function renderMatches() {
   const tbody = document.getElementById('match-tbody');
   const empty = document.getElementById('match-empty');
@@ -70,7 +76,12 @@ function renderMatches() {
     return;
   }
 
-  MATCHES.forEach((m, i) => {
+  // Sort by date descending (most recent first), keep original indices
+  const sorted = MATCHES
+    .map((m, i) => ({ m, i }))
+    .sort((a, b) => parseDate(b.m.date) - parseDate(a.m.date));
+
+  sorted.forEach(({ m, i }) => {
     const res       = matchResult(m.goalsFor, m.goalsAgainst);
     const presentCt = (m.players || []).filter(p => p.present).length;
     const tr        = document.createElement('tr');
@@ -82,6 +93,7 @@ function renderMatches() {
       <td><strong>${m.goalsFor} – ${m.goalsAgainst}</strong></td>
       <td><span class="badge ${res.cls}">${res.label}</span></td>
       <td>${presentCt} / ${PLAYERS.length}</td>
+      <td><a class="details-link" href="#">Bekijk details</a></td>
     `;
     tr.onclick = () => openMatchModal(i);
     tbody.appendChild(tr);
@@ -97,18 +109,25 @@ function openMatchModal(idx) {
   const lookup = {};
   (m.players || []).forEach(mp => { lookup[mp.nr] = mp; });
 
-  // Build rows for every player
-  const rows = PLAYERS.map(p => {
-    const mp  = lookup[p.nr];
-    const att = mp ? mp.present : false;
-    const g   = mp ? (mp.goals        || 0) : 0;
-    const y   = mp ? (mp.yellowCards  || 0) : 0;
-    const r   = mp ? (mp.redCards     || 0) : 0;
+  // Only present players, sorted by goals desc then lastName asc
+  const presentPlayers = PLAYERS
+    .filter(p => lookup[p.nr] && lookup[p.nr].present)
+    .sort((a, b) => {
+      const ga = lookup[a.nr].goals || 0;
+      const gb = lookup[b.nr].goals || 0;
+      if (gb !== ga) return gb - ga;
+      return a.lastName.localeCompare(b.lastName);
+    });
+
+  const rows = presentPlayers.map(p => {
+    const mp = lookup[p.nr];
+    const g  = mp.goals        || 0;
+    const y  = mp.yellowCards  || 0;
+    const r  = mp.redCards     || 0;
     return `
       <tr>
         <td>${p.nr}</td>
         <td>${p.firstName} ${p.lastName}</td>
-        <td>${att ? '<span class="dot-yes">✔</span>' : '<span class="dot-no">✘</span>'}</td>
         <td>${g > 0 ? g : '–'}</td>
         <td>${y > 0 ? `<span class="card-y"></span> ${y}` : '–'}</td>
         <td>${r > 0 ? `<span class="card-r"></span> ${r}` : '–'}</td>
@@ -130,7 +149,6 @@ function openMatchModal(idx) {
           <tr>
             <th>Nr</th>
             <th>Naam</th>
-            <th>Aanw.</th>
             <th>⚽ Goals</th>
             <th><span class="card-y"></span> Geel</th>
             <th><span class="card-r"></span> Rood</th>
@@ -155,6 +173,9 @@ function renderPlayers(stats) {
   tbody.innerHTML = PLAYERS.map(p => {
     const att  = stats.attendance[p.nr] || 0;
     const pct  = MATCHES.length ? Math.round(att / MATCHES.length * 100) : 0;
+    const g    = stats.totalGoals[p.nr]  || 0;
+    const y    = stats.totalYellow[p.nr] || 0;
+    const r    = stats.totalRed[p.nr]    || 0;
     return `
       <tr>
         <td>${p.nr}</td>
@@ -162,6 +183,9 @@ function renderPlayers(stats) {
         <td>${att}</td>
         <td>${MATCHES.length}</td>
         <td>${MATCHES.length ? pct + '%' : '–'}</td>
+        <td>${g > 0 ? g : '–'}</td>
+        <td>${y > 0 ? `<span class="card-y"></span> ${y}` : '–'}</td>
+        <td>${r > 0 ? `<span class="card-r"></span> ${r}` : '–'}</td>
       </tr>`;
   }).join('');
 }
@@ -212,6 +236,30 @@ function renderCards(stats) {
     </tr>`).join('');
 }
 
+// ── Leaderboard ───────────────────────────────────────────────
+function renderLeaderboard() {
+  if (typeof LEADERBOARD === 'undefined') return;
+  document.getElementById('leaderboard-date').textContent =
+    `Publicatiedatum: ${LEADERBOARD.publishedDate}`;
+  const tbody = document.getElementById('leaderboard-tbody');
+  tbody.innerHTML = LEADERBOARD.teams.map(t => {
+    const isSelf = t.name === 'REZZEKES TEGEN';
+    const style  = isSelf ? ' style="color:var(--gold);font-weight:700;"' : '';
+    return `<tr${style}>
+      <td>${t.pos}</td>
+      <td>${t.name}</td>
+      <td>${t.gsp}</td>
+      <td>${t.gew}</td>
+      <td>${t.gel}</td>
+      <td>${t.verl}</td>
+      <td>${t.goalsFor}</td>
+      <td>${t.goalsAgainst}</td>
+      <td>${t.saldo > 0 ? '+' : ''}${t.saldo}</td>
+      <td><strong>${t.ptn}</strong></td>
+    </tr>`;
+  }).join('');
+}
+
 // ── Tab switching ─────────────────────────────────────────────
 function openTab(e, id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -228,6 +276,7 @@ function openTab(e, id) {
   renderPlayers(stats);
   renderScorers(stats);
   renderCards(stats);
+  renderLeaderboard();
 })();
 
 // Close modal on Escape key
