@@ -197,6 +197,7 @@ async function loadSponsors() {
       img.src = file.download_url;
       img.alt = readableName || 'Sponsor';
       item.title = readableName || 'Sponsor';
+      item.addEventListener('click', () => openSponsorLightbox(file.download_url, readableName || 'Sponsor'));
       grid.appendChild(item);
     });
   } catch (err) {
@@ -204,7 +205,26 @@ async function loadSponsors() {
   }
 }
 
-// ── Players / Attendance table ───────────────────────────────
+// ── Sponsor lightbox ─────────────────────────────────────────
+function openSponsorLightbox(src, alt) {
+  const lb = document.getElementById('sponsor-lightbox');
+  const img = lb.querySelector('img');
+  img.src = src;
+  img.alt = alt;
+  lb.classList.add('open');
+}
+function closeSponsorLightbox() {
+  const lb = document.getElementById('sponsor-lightbox');
+  lb.classList.remove('open');
+  lb.querySelector('img').src = '';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const lb = document.getElementById('sponsor-lightbox');
+  if (lb) {
+    lb.addEventListener('click', closeSponsorLightbox);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSponsorLightbox(); });
+  }
+});
 function renderPlayers(stats) {
   const tbody = document.getElementById('players-tbody');
   tbody.innerHTML = PLAYERS.map(p => {
