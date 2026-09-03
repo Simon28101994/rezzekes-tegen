@@ -179,7 +179,10 @@ async function loadSponsors() {
 
     const files = await response.json();
     const imageFiles = files
-      .filter(file => file.type === 'file' && /^image\//.test(file?.content_type || '') || /\.(png|jpe?g|svg|webp|gif)$/i.test(file.name))
+      .filter(file => file.type === 'file' && (
+        /^image\//.test(file?.content_type || '') ||
+        /\.(png|jpe?g|svg|webp|gif)$/i.test(file.name)
+      ))
       .sort((a, b) => a.name.localeCompare(b.name));
 
     imageFiles.forEach(file => {
