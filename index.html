@@ -220,6 +220,22 @@
 
     /* ── Leaderboard own team highlight ── */
     #leaderboard-tbody tr[style] td { background: rgba(245,195,0,.06); }
+
+    /* ── Sortable table headers ── */
+    th[onclick] { cursor: pointer; user-select: none; }
+    th[onclick]:hover { color: var(--text); }
+    th[onclick]::after { content: ' ⇅'; opacity: .35; font-size: .75em; }
+    th[data-sort-dir="asc"]::after  { content: ' ▲'; opacity: 1; }
+    th[data-sort-dir="desc"]::after { content: ' ▼'; opacity: 1; }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      header { padding: 1rem; gap: .8rem; }
+      header h1 { font-size: 1.3rem; }
+      .logo-circle { width: 48px; height: 48px; }
+      .tab-panel { padding: 1rem; }
+      .stat-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: .6rem; }
+    }
   </style>
 </head>
 <body>
@@ -254,12 +270,12 @@
     <table id="match-table">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Datum</th>
-          <th>Tegenstander</th>
-          <th>Score</th>
-          <th>Resultaat</th>
-          <th>Aanwezig</th>
+          <th onclick="sortTable(this,0,'num')">#</th>
+          <th onclick="sortTable(this,1,'date')">Datum</th>
+          <th onclick="sortTable(this,2,'str')">Tegenstander</th>
+          <th onclick="sortTable(this,3,'str')">Score</th>
+          <th onclick="sortTable(this,4,'str')">Resultaat</th>
+          <th onclick="sortTable(this,5,'num')">Aanwezig</th>
           <th></th>
         </tr>
       </thead>
@@ -280,14 +296,14 @@
     <table>
       <thead>
         <tr>
-          <th>Nr</th>
-          <th>Naam</th>
-          <th>Aanwezig</th>
-          <th>Wedstrijden</th>
-          <th>%</th>
-          <th>⚽ Goals</th>
-          <th><span class="card-y"></span> Geel</th>
-          <th><span class="card-r"></span> Rood</th>
+          <th onclick="sortTable(this,0,'num')">Nr</th>
+          <th onclick="sortTable(this,1,'str')">Naam</th>
+          <th onclick="sortTable(this,2,'num')">Aanwezig</th>
+          <th onclick="sortTable(this,3,'num')">Wedstrijden</th>
+          <th onclick="sortTable(this,4,'pct')">%</th>
+          <th onclick="sortTable(this,5,'num')">⚽ Goals</th>
+          <th onclick="sortTable(this,6,'num')"><span class="card-y"></span> Geel</th>
+          <th onclick="sortTable(this,7,'num')"><span class="card-r"></span> Rood</th>
         </tr>
       </thead>
       <tbody id="players-tbody"></tbody>
@@ -304,9 +320,9 @@
     <table>
       <thead>
         <tr>
-          <th>Rang</th>
-          <th>Naam</th>
-          <th>Goals</th>
+          <th onclick="sortTable(this,0,'num')">Rang</th>
+          <th onclick="sortTable(this,1,'str')">Naam</th>
+          <th onclick="sortTable(this,2,'num')">Goals</th>
         </tr>
       </thead>
       <tbody id="scorers-tbody"></tbody>
@@ -326,9 +342,9 @@
     <table>
       <thead>
         <tr>
-          <th>Naam</th>
-          <th><span class="card-y"></span> Geel</th>
-          <th><span class="card-r"></span> Rood</th>
+          <th onclick="sortTable(this,0,'str')">Naam</th>
+          <th onclick="sortTable(this,1,'num')"><span class="card-y"></span> Geel</th>
+          <th onclick="sortTable(this,2,'num')"><span class="card-r"></span> Rood</th>
         </tr>
       </thead>
       <tbody id="cards-tbody"></tbody>
@@ -349,16 +365,16 @@
     <table id="leaderboard-table">
       <thead>
         <tr>
-          <th>Pos</th>
-          <th>Team</th>
-          <th>Gsp</th>
-          <th>Gew</th>
-          <th>Gel</th>
-          <th>Verl</th>
-          <th>+</th>
-          <th>–</th>
-          <th>Saldo</th>
-          <th>Ptn</th>
+          <th onclick="sortTable(this,0,'num')">Pos</th>
+          <th onclick="sortTable(this,1,'str')">Team</th>
+          <th onclick="sortTable(this,2,'num')">Gsp</th>
+          <th onclick="sortTable(this,3,'num')">Gew</th>
+          <th onclick="sortTable(this,4,'num')">Gel</th>
+          <th onclick="sortTable(this,5,'num')">Verl</th>
+          <th onclick="sortTable(this,6,'num')">+</th>
+          <th onclick="sortTable(this,7,'num')">–</th>
+          <th onclick="sortTable(this,8,'num')">Saldo</th>
+          <th onclick="sortTable(this,9,'num')">Ptn</th>
         </tr>
       </thead>
       <tbody id="leaderboard-tbody"></tbody>

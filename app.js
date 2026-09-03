@@ -260,6 +260,49 @@ function renderLeaderboard() {
   }).join('');
 }
 
+// ── Sortable tables ───────────────────────────────────────────
+const _sortState = new WeakMap();
+
+function sortTable(th, colIndex, type) {
+  const tbody = th.closest('table').querySelector('tbody');
+  const state = _sortState.get(th) || { asc: false };
+  const asc   = !state.asc;
+  _sortState.set(th, { asc });
+
+  // Clear indicators on siblings
+  th.closest('tr').querySelectorAll('th').forEach(t => {
+    t.removeAttribute('data-sort-dir');
+  });
+  th.setAttribute('data-sort-dir', asc ? 'asc' : 'desc');
+
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  rows.sort((a, b) => {
+    const cellA = a.cells[colIndex] ? a.cells[colIndex].textContent.trim() : '';
+    const cellB = b.cells[colIndex] ? b.cells[colIndex].textContent.trim() : '';
+
+    let valA, valB;
+    if (type === 'num') {
+      valA = parseFloat(cellA.replace(/[^0-9.\-]/g, '')) || 0;
+      valB = parseFloat(cellB.replace(/[^0-9.\-]/g, '')) || 0;
+    } else if (type === 'pct') {
+      valA = parseFloat(cellA) || 0;
+      valB = parseFloat(cellB) || 0;
+    } else if (type === 'date') {
+      valA = parseDate(cellA) || 0;
+      valB = parseDate(cellB) || 0;
+    } else {
+      valA = cellA.toLowerCase();
+      valB = cellB.toLowerCase();
+    }
+
+    if (valA < valB) return asc ? -1 : 1;
+    if (valA > valB) return asc ? 1 : -1;
+    return 0;
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+}
+
 // ── Tab switching ─────────────────────────────────────────────
 function openTab(e, id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
