@@ -167,6 +167,40 @@ function closeModal(e, force) {
   }
 }
 
+// ── Sponsors footer ────────────────────────────────────────────
+async function loadSponsors() {
+  const grid = document.getElementById('sponsors-grid');
+  const template = document.getElementById('sponsor-logo-template');
+  if (!grid || !template) return;
+
+  try {
+    const response = await fetch('https://api.github.com/repos/Simon28101994/rezzekes-tegen/contents/sponsors');
+    if (!response.ok) throw new Error('Could not load sponsors');
+
+    const files = await response.json();
+    const imageFiles = files
+      .filter(file => file.type === 'file' && /^image\//.test(file?.content_type || '') || /\.(png|jpe?g|svg|webp|gif)$/i.test(file.name))
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    imageFiles.forEach(file => {
+      const item = template.content.firstElementChild.cloneNode(true);
+      const img = item.querySelector('img');
+      const readableName = file.name
+        .replace(/\.[^.]+$/, '')
+        .replace(/[_-]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      img.src = file.download_url;
+      img.alt = readableName || 'Sponsor';
+      item.title = readableName || 'Sponsor';
+      grid.appendChild(item);
+    });
+  } catch (err) {
+    grid.innerHTML = '';
+  }
+}
+
 // ── Players / Attendance table ───────────────────────────────
 function renderPlayers(stats) {
   const tbody = document.getElementById('players-tbody');
@@ -320,6 +354,7 @@ function openTab(e, id) {
   renderScorers(stats);
   renderCards(stats);
   renderLeaderboard();
+  loadSponsors();
 })();
 
 // Close modal on Escape key
