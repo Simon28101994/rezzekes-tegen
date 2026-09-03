@@ -236,6 +236,45 @@
       .tab-panel { padding: 1rem; }
       .stat-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: .6rem; }
     }
+
+    /* ── Sponsors footer ── */
+    footer {
+      margin-top: 2rem;
+      border-top: 1px solid var(--light);
+      background: var(--dark);
+      padding: 1.5rem 1rem 2rem;
+    }
+    .sponsors-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .sponsors-wrap h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: .8rem;
+      align-items: center;
+    }
+    .sponsor-item {
+      background: var(--mid);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: .7rem;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sponsor-item img {
+      max-width: 100%;
+      max-height: 44px;
+      object-fit: contain;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -391,6 +430,19 @@
     <div id="modal-content"></div>
   </div>
 </div>
+
+<footer>
+  <div class="sponsors-wrap">
+    <h2>Sponsors</h2>
+    <div class="sponsors-grid" id="sponsors-grid"></div>
+  </div>
+</footer>
+
+<template id="sponsor-logo-template">
+  <div class="sponsor-item">
+    <img src="" alt="" loading="lazy" />
+  </div>
+</template>
 
 <script src="data.js"></script>
 <script src="app.js"></script>
