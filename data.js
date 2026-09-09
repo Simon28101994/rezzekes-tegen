@@ -50,7 +50,6 @@ const PLAYERS = [
 // and add the result as a new entry in MATCHES below.
 // Each game: { date: 'DD/MM/YYYY', time: 'HH:MM', opponent: 'Club naam', home: true/false }
 const UPCOMING_GAMES = [
-  { date: '09/09/2026', time: '22:00', opponent: 'Balkanos',     home: false },
   { date: '23/09/2026', time: '22:00', opponent: 'Pottekestamp', home: true  },
   { date: '30/09/2026', time: '21:00', opponent: 'De Skoeten',   home: true  },
 ];
@@ -84,6 +83,7 @@ const LEAGUE_MATCHES = [
   { week: 2, home: 'LA FAMILIA',  away: 'DE SKOETEN',       scoreHome: 14, scoreAway:  4 },
   { week: 2, home: 'GALACTICOS',  away: 'DE WEKE TINGELS',  scoreHome:  3, scoreAway:  6 },
   { week: 2, home: "COCKY'S",     away: 'POTTEKESTAMP',     scoreHome:  4, scoreAway:  9 },
+  { week: 3, home: 'BALKANOS',    away: 'REZZEKES TEGEN',   scoreHome:  6, scoreAway:  4 },
 ];
 
 const MATCHES = [
@@ -105,6 +105,31 @@ const MATCHES = [
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 10, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 11, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen Somers
+      { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
+      { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
+      { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
+      { nr: 15, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+    ]
+  },
+  // ── Match 2 – 09/09/2026 ──────────────────────────────────
+  {
+    date: '09/09/2026',
+    opponent: 'Balkanos',
+    goalsFor: 4,
+    goalsAgainst: 6,
+    players: [
+      { nr:  1, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
+      { nr:  2, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
+      { nr:  3, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Joran Lemaire
+      { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
+      { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
+      { nr:  7, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
+      { nr:  8, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
+      { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
+      { nr: 10, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
+      { nr: 11, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Jeroen Somers
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
