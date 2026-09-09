@@ -363,6 +363,7 @@
   <button class="tab-btn"        onclick="openTab(event,'tab-scorers')">🥇 Topschutters</button>
   <button class="tab-btn"        onclick="openTab(event,'tab-cards')">🟨 Kaarten</button>
   <button class="tab-btn"        onclick="openTab(event,'tab-leaderboard')">📊 Klassement</button>
+  <button class="tab-btn"        onclick="openTab(event,'tab-league-matches')">📅 Alle wedstrijden</button>
 </nav>
 
 <!-- ══════════════════════════════════════════
@@ -491,6 +492,17 @@
       </thead>
       <tbody id="leaderboard-tbody"></tbody>
     </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TAB 6 – ALL LEAGUE MATCHES
+══════════════════════════════════════════ -->
+<section id="tab-league-matches" class="tab-panel">
+  <h2>Alle wedstrijden</h2>
+  <div id="league-matches-weeks"></div>
+  <div id="league-matches-empty" class="empty" style="display:none">
+    <span>📅</span>Nog geen wedstrijden gespeeld.
   </div>
 </section>
 

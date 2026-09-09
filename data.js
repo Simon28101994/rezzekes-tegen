@@ -56,21 +56,35 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  publishedDate: '02/09/2026',
+  publishedDate: '08/09/2026',
   teams: [
-    { pos:  1, name: "REZZEKES TEGEN",   gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor: 13, goalsAgainst:  3, saldo:  10, ptn: 3 },
-    { pos:  2, name: "BLACK'XTRAS",      gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
-    { pos:  2, name: "STB85",            gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
-    { pos:  4, name: "BALKANOS",         gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos:  4, name: "BIEMEN",           gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos:  4, name: "DE SKOETEN",       gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos:  4, name: "DE WEKE TINGELS",  gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos:  4, name: "GALACTICOS",       gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos:  4, name: "LA FAMILIA",       gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos:  4, name: "POTTEKESTAMP",     gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
-    { pos: 11, name: "COCKY'S",          gsp: 1, gew: 0, gel: 0, verl: 1, goalsFor:  3, goalsAgainst: 13, saldo: -10, ptn: 0 },
+    { pos:  1, name: "LA FAMILIA",       gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor: 14, goalsAgainst:  4, saldo:  10, ptn: 3 },
+    { pos:  2, name: "REZZEKES TEGEN",   gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor: 13, goalsAgainst:  3, saldo:  10, ptn: 3 },
+    { pos:  3, name: "POTTEKESTAMP",     gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor:  9, goalsAgainst:  4, saldo:   5, ptn: 3 },
+    { pos:  4, name: "DE WEKE TINGELS",  gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor:  6, goalsAgainst:  3, saldo:   3, ptn: 3 },
+    { pos:  5, name: "BLACK'XTRAS",      gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
+    { pos:  5, name: "STB85",            gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
+    { pos:  7, name: "BALKANOS",         gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  7, name: "BIEMEN",           gsp: 0, gew: 0, gel: 0, verl: 0, goalsFor:  0, goalsAgainst:  0, saldo:   0, ptn: 0 },
+    { pos:  9, name: "GALACTICOS",       gsp: 1, gew: 0, gel: 0, verl: 1, goalsFor:  3, goalsAgainst:  6, saldo:  -3, ptn: 0 },
+    { pos: 10, name: "DE SKOETEN",       gsp: 1, gew: 0, gel: 0, verl: 1, goalsFor:  4, goalsAgainst: 14, saldo: -10, ptn: 0 },
+    { pos: 11, name: "COCKY'S",          gsp: 2, gew: 0, gel: 0, verl: 2, goalsFor:  7, goalsAgainst: 22, saldo: -15, ptn: 0 },
   ]
 };
+
+// ── League matches ───────────────────────────────────────────
+// Every match played across the full competition (not just ours),
+// grouped by week. Add "bye: 'TEAM'" for the team that had no game
+// that week instead of home/away/scoreHome/scoreAway.
+const LEAGUE_MATCHES = [
+  { week: 1, bye: 'BALKANOS' },
+  { week: 1, home: "COCKY'S",     away: 'REZZEKES TEGEN',  scoreHome:  3, scoreAway: 13 },
+  { week: 1, home: "BLACK'XTRAS", away: 'STB85',            scoreHome:  4, scoreAway:  4 },
+  { week: 2, bye: 'STB85' },
+  { week: 2, home: 'LA FAMILIA',  away: 'DE SKOETEN',       scoreHome: 14, scoreAway:  4 },
+  { week: 2, home: 'GALACTICOS',  away: 'DE WEKE TINGELS',  scoreHome:  3, scoreAway:  6 },
+  { week: 2, home: "COCKY'S",     away: 'POTTEKESTAMP',     scoreHome:  4, scoreAway:  9 },
+];
 
 const MATCHES = [
   // ── Match 1 – 02/09/2026 ──────────────────────────────────

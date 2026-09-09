@@ -400,6 +400,50 @@ function sortTable(th, colIndex, type) {
   rows.forEach(r => tbody.appendChild(r));
 }
 
+// ── All league matches ──────────────────────────────────────────
+function renderLeagueMatches() {
+  const wrap  = document.getElementById('league-matches-weeks');
+  const empty = document.getElementById('league-matches-empty');
+  wrap.innerHTML = '';
+
+  const all = typeof LEAGUE_MATCHES !== 'undefined' ? LEAGUE_MATCHES : [];
+  if (!all.length) {
+    wrap.style.display  = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  wrap.style.display  = 'block';
+  empty.style.display = 'none';
+
+  const weeks = [...new Set(all.map(m => m.week))].sort((a, b) => b - a);
+
+  wrap.innerHTML = weeks.map(week => {
+    const games = all.filter(m => m.week === week);
+    const bye   = games.find(m => m.bye);
+    const played = games.filter(m => !m.bye);
+
+    const rows = played.map(m => {
+      const homeSelf = m.home === 'REZZEKES TEGEN';
+      const awaySelf = m.away === 'REZZEKES TEGEN';
+      return `
+        <tr>
+          <td${homeSelf ? ' style="color:var(--gold);font-weight:700;"' : ''}>${m.home}</td>
+          <td><strong>${m.scoreHome} – ${m.scoreAway}</strong></td>
+          <td${awaySelf ? ' style="color:var(--gold);font-weight:700;"' : ''}>${m.away}</td>
+        </tr>`;
+    }).join('');
+
+    return `
+      <h3>Week ${week}${bye ? ` <span style="color:var(--muted);font-weight:400;font-size:0.8rem;">(vrij: ${bye.bye})</span>` : ''}</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Thuis</th><th>Score</th><th>Uit</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  }).join('');
+}
+
 // ── Tab switching ─────────────────────────────────────────────
 function openTab(e, id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -418,6 +462,7 @@ function openTab(e, id) {
   renderScorers(stats);
   renderCards(stats);
   renderLeaderboard();
+  renderLeagueMatches();
   loadSponsors();
 })();
 
