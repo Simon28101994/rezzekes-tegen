@@ -127,7 +127,7 @@ const MATCHES = [
       { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
       { nr:  7, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  8, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
-      { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
+      { nr:  9, present: true, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 10, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 11, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Jeroen Somers
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
