@@ -55,17 +55,19 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  publishedDate: '14/09/2026',
+  // Computed locally from LEAGUE_MATCHES (no official table published yet
+  // for this round) — replace with the real published table once available.
+  publishedDate: '17/09/2026',
   teams: [
-    { pos:  1, name: "DE WEKE TINGELS",  gsp: 2, gew: 2, gel: 0, verl: 0, goalsFor: 25, goalsAgainst:  6, saldo:  19, ptn: 6 },
-    { pos:  2, name: "LA FAMILIA",       gsp: 2, gew: 1, gel: 1, verl: 0, goalsFor: 18, goalsAgainst:  8, saldo:  10, ptn: 4 },
-    { pos:  3, name: "BIEMEN",           gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor: 11, goalsAgainst:  1, saldo:  10, ptn: 3 },
-    { pos:  4, name: "REZZEKES TEGEN",   gsp: 2, gew: 1, gel: 0, verl: 1, goalsFor: 17, goalsAgainst:  9, saldo:   8, ptn: 3 },
-    { pos:  5, name: "POTTEKESTAMP",     gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor:  9, goalsAgainst:  4, saldo:   5, ptn: 3 },
-    { pos:  6, name: "BALKANOS",         gsp: 1, gew: 1, gel: 0, verl: 0, goalsFor:  6, goalsAgainst:  4, saldo:   2, ptn: 3 },
+    { pos:  1, name: "BIEMEN",           gsp: 2, gew: 2, gel: 0, verl: 0, goalsFor: 24, goalsAgainst:  4, saldo:  20, ptn: 6 },
+    { pos:  2, name: "DE WEKE TINGELS",  gsp: 2, gew: 2, gel: 0, verl: 0, goalsFor: 25, goalsAgainst:  6, saldo:  19, ptn: 6 },
+    { pos:  3, name: "LA FAMILIA",       gsp: 2, gew: 1, gel: 1, verl: 0, goalsFor: 18, goalsAgainst:  8, saldo:  10, ptn: 4 },
+    { pos:  4, name: "POTTEKESTAMP",     gsp: 2, gew: 1, gel: 1, verl: 0, goalsFor: 12, goalsAgainst:  7, saldo:   5, ptn: 4 },
+    { pos:  5, name: "BALKANOS",         gsp: 2, gew: 1, gel: 1, verl: 0, goalsFor:  9, goalsAgainst:  7, saldo:   2, ptn: 4 },
+    { pos:  6, name: "REZZEKES TEGEN",   gsp: 2, gew: 1, gel: 0, verl: 1, goalsFor: 17, goalsAgainst:  9, saldo:   8, ptn: 3 },
     { pos:  7, name: "COCKY'S",          gsp: 3, gew: 1, gel: 0, verl: 2, goalsFor: 17, goalsAgainst: 22, saldo:  -5, ptn: 3 },
-    { pos:  8, name: "STB85",            gsp: 1, gew: 0, gel: 1, verl: 0, goalsFor:  4, goalsAgainst:  4, saldo:   0, ptn: 1 },
-    { pos:  9, name: "GALACTICOS",       gsp: 2, gew: 0, gel: 1, verl: 1, goalsFor:  7, goalsAgainst: 10, saldo:  -3, ptn: 1 },
+    { pos:  8, name: "GALACTICOS",       gsp: 2, gew: 0, gel: 1, verl: 1, goalsFor:  7, goalsAgainst: 10, saldo:  -3, ptn: 1 },
+    { pos:  9, name: "STB85",            gsp: 2, gew: 0, gel: 1, verl: 1, goalsFor:  7, goalsAgainst: 17, saldo: -10, ptn: 1 },
     { pos: 10, name: "BLACK'XTRAS",      gsp: 3, gew: 0, gel: 1, verl: 2, goalsFor:  8, goalsAgainst: 34, saldo: -26, ptn: 1 },
     { pos: 11, name: "DE SKOETEN",       gsp: 2, gew: 0, gel: 0, verl: 2, goalsFor:  4, goalsAgainst: 24, saldo: -20, ptn: 0 },
   ]
@@ -85,9 +87,12 @@ const LEAGUE_MATCHES = [
   { week: 2, home: "COCKY'S",     away: 'POTTEKESTAMP',     scoreHome:  4, scoreAway:  9 },
   { week: 2, home: "BLACK'XTRAS", away: 'BIEMEN',            scoreHome:  1, scoreAway: 11 },
   { week: 2, home: 'BALKANOS',    away: 'REZZEKES TEGEN',   scoreHome:  6, scoreAway:  4 },
+  { week: 3, bye: 'REZZEKES TEGEN' },
   { week: 3, home: 'GALACTICOS',  away: 'LA FAMILIA',       scoreHome:  4, scoreAway:  4 },
   { week: 3, home: "COCKY'S",     away: 'DE SKOETEN',       scoreHome: 10, scoreAway:  0 },
   { week: 3, home: "BLACK'XTRAS", away: 'DE WEKE TINGELS',  scoreHome:  3, scoreAway: 19 },
+  { week: 3, home: 'BALKANOS',    away: 'POTTEKESTAMP',     scoreHome:  3, scoreAway:  3 },
+  { week: 3, home: 'STB85',       away: 'BIEMEN',           scoreHome:  3, scoreAway: 13 },
 ];
 
 const MATCHES = [
