@@ -107,6 +107,11 @@ function parseDateTime(dateStr, timeStr) {
   return new Date(y, m - 1, d, h, min);
 }
 
+const DAY_ABBREV = ['Zo', 'Ma', 'Di', 'Woe', 'Do', 'Vrij', 'Za'];
+function dayAbbrev(dateStr) {
+  return DAY_ABBREV[parseDateTime(dateStr).getDay()];
+}
+
 function renderUpcoming() {
   const grid  = document.getElementById('upcoming-grid');
   const empty = document.getElementById('upcoming-empty');
@@ -132,7 +137,7 @@ function renderUpcoming() {
     const card = document.createElement('div');
     card.className = 'upcoming-card';
     card.innerHTML = `
-      <div><span class="u-date">${g.date}</span><span class="u-time">${g.time}</span></div>
+      <div><span class="u-date">${dayAbbrev(g.date)} ${g.date}</span><span class="u-time">${g.time}</span></div>
       <div class="u-match">${label}</div>
       <span class="u-tag ${g.home ? 'home' : 'away'}">${g.home ? 'Thuis' : 'Uit'}</span>
     `;
