@@ -52,6 +52,9 @@ const PLAYERS = [
 const UPCOMING_GAMES = [
   { date: '23/09/2026', time: '22:00', opponent: 'Pottekestamp', home: true  },
   { date: '30/09/2026', time: '21:00', opponent: 'De Skoeten',   home: true  },
+  { date: '05/10/2026', time: '22:00', opponent: 'Galacticos',   home: true  },
+  { date: '12/10/2026', time: '21:00', opponent: "Black'Xtras",  home: true  },
+  { date: '19/10/2026', time: '20:00', opponent: 'STB85',        home: true  },
 ];
 
 const LEADERBOARD = {
@@ -74,9 +77,11 @@ const LEADERBOARD = {
 };
 
 // ── League matches ───────────────────────────────────────────
-// Every match played across the full competition (not just ours),
-// grouped by week. Add "bye: 'TEAM'" for the team that had no game
-// that week instead of home/away/scoreHome/scoreAway.
+// Every match across the full competition (not just ours), grouped
+// by week. Add "bye: 'TEAM'" for the team that had no game that
+// week. A played match has scoreHome/scoreAway; a scheduled-but-not
+// -yet-played match has date/time instead — fill in the score once
+// it's known and drop the date/time (or keep it, it's just unused).
 const LEAGUE_MATCHES = [
   { week: 1, bye: 'BALKANOS' },
   { week: 1, home: "COCKY'S",     away: 'REZZEKES TEGEN',  scoreHome:  3, scoreAway: 13 },
@@ -93,6 +98,41 @@ const LEAGUE_MATCHES = [
   { week: 3, home: "BLACK'XTRAS", away: 'DE WEKE TINGELS',  scoreHome:  3, scoreAway: 19 },
   { week: 3, home: 'BALKANOS',    away: 'POTTEKESTAMP',     scoreHome:  3, scoreAway:  3 },
   { week: 3, home: 'STB85',       away: 'BIEMEN',           scoreHome:  3, scoreAway: 13 },
+
+  { week: 4, bye: 'BIEMEN' },
+  { week: 4, home: "COCKY'S",     away: 'GALACTICOS',      date: '21/09/2026', time: '20:00' },
+  { week: 4, home: "BLACK'XTRAS", away: 'LA FAMILIA',      date: '21/09/2026', time: '21:00' },
+  { week: 4, home: 'BALKANOS',    away: 'DE SKOETEN',      date: '21/09/2026', time: '22:00' },
+  { week: 4, home: 'STB85',       away: 'DE WEKE TINGELS', date: '23/09/2026', time: '21:00' },
+  { week: 4, home: 'REZZEKES TEGEN', away: 'POTTEKESTAMP', date: '23/09/2026', time: '22:00' },
+
+  { week: 5, bye: 'POTTEKESTAMP' },
+  { week: 5, home: "BLACK'XTRAS", away: "COCKY'S",         date: '28/09/2026', time: '20:00' },
+  { week: 5, home: 'BALKANOS',    away: 'GALACTICOS',      date: '28/09/2026', time: '21:00' },
+  { week: 5, home: 'STB85',       away: 'LA FAMILIA',      date: '28/09/2026', time: '22:00' },
+  { week: 5, home: 'REZZEKES TEGEN', away: 'DE SKOETEN',   date: '30/09/2026', time: '21:00' },
+  { week: 5, home: 'BIEMEN',      away: 'DE WEKE TINGELS', date: '30/09/2026', time: '22:00' },
+
+  { week: 6, bye: 'DE WEKE TINGELS' },
+  { week: 6, home: 'BALKANOS',    away: "BLACK'XTRAS",     date: '05/10/2026', time: '20:00' },
+  { week: 6, home: 'STB85',       away: "COCKY'S",         date: '05/10/2026', time: '21:00' },
+  { week: 6, home: 'REZZEKES TEGEN', away: 'GALACTICOS',   date: '05/10/2026', time: '22:00' },
+  { week: 6, home: 'BIEMEN',      away: 'LA FAMILIA',      date: '07/10/2026', time: '21:00' },
+  { week: 6, home: 'POTTEKESTAMP', away: 'DE SKOETEN',     date: '07/10/2026', time: '22:00' },
+
+  { week: 7, bye: 'DE SKOETEN' },
+  { week: 7, home: 'STB85',       away: 'BALKANOS',        date: '12/10/2026', time: '20:00' },
+  { week: 7, home: 'REZZEKES TEGEN', away: "BLACK'XTRAS",  date: '12/10/2026', time: '21:00' },
+  { week: 7, home: 'BIEMEN',      away: "COCKY'S",         date: '12/10/2026', time: '22:00' },
+  { week: 7, home: 'POTTEKESTAMP', away: 'GALACTICOS',     date: '14/10/2026', time: '21:00' },
+  { week: 7, home: 'DE WEKE TINGELS', away: 'LA FAMILIA',  date: '14/10/2026', time: '22:00' },
+
+  { week: 8, bye: 'LA FAMILIA' },
+  { week: 8, home: 'REZZEKES TEGEN', away: 'STB85',        date: '19/10/2026', time: '20:00' },
+  { week: 8, home: 'BIEMEN',      away: 'BALKANOS',        date: '19/10/2026', time: '21:00' },
+  { week: 8, home: 'POTTEKESTAMP', away: "BLACK'XTRAS",    date: '19/10/2026', time: '22:00' },
+  { week: 8, home: 'DE WEKE TINGELS', away: "COCKY'S",     date: '21/10/2026', time: '21:00' },
+  { week: 8, home: 'DE SKOETEN',  away: 'GALACTICOS',      date: '21/10/2026', time: '22:00' },
 ];
 
 const MATCHES = [

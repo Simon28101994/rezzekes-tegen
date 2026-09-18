@@ -425,10 +425,14 @@ function renderLeagueMatches() {
     const rows = played.map(m => {
       const homeSelf = m.home === 'REZZEKES TEGEN';
       const awaySelf = m.away === 'REZZEKES TEGEN';
+      const isPlayed = m.scoreHome !== undefined;
+      const middle    = isPlayed
+        ? `<strong>${m.scoreHome} – ${m.scoreAway}</strong>`
+        : `<span style="color:var(--muted);">${m.date}${m.time ? ' · ' + m.time : ''}</span>`;
       return `
         <tr>
           <td${homeSelf ? ' style="color:var(--gold);font-weight:700;"' : ''}>${m.home}</td>
-          <td><strong>${m.scoreHome} – ${m.scoreAway}</strong></td>
+          <td>${middle}</td>
           <td${awaySelf ? ' style="color:var(--gold);font-weight:700;"' : ''}>${m.away}</td>
         </tr>`;
     }).join('');
