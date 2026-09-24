@@ -190,14 +190,14 @@ const MATCHES = [
     goalsFor: 2,
     goalsAgainst: 9,
     players: [
-      { nr:  1, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
-      { nr:  2, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  1, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
+      { nr:  2, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Matthias Bonte
       { nr:  3, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
-      { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
+      { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
       { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
-      { nr:  8, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
+      { nr:  8, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Joran Lemaire
       { nr: 11, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen Somers
