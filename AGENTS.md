@@ -23,6 +23,11 @@ dependencies — just `index.html` (structure + all CSS inline), `app.js`
 Everything else (`app.js`, the HTML structure) rarely needs touching for a
 routine data update.
 
+Whenever `app.js` or `data.js` changes, bump the `?v=N` query on their
+`<script>` tags at the bottom of `index.html` — the site is served with no
+cache-busting otherwise, so returning visitors' browsers can keep serving a
+stale script after a deploy.
+
 ## Testing changes
 
 `file://` previews don't execute JS (static snapshot only). To verify a

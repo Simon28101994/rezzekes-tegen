@@ -406,11 +406,18 @@ function sortTable(th, colIndex, type) {
 }
 
 // ── All league matches ──────────────────────────────────────────
+function normalizeTeam(s) {
+  return s.toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
 function renderLeagueMatches() {
   const wrap   = document.getElementById('league-matches-weeks');
   const empty  = document.getElementById('league-matches-empty');
   const filter = document.getElementById('league-team-filter');
   wrap.innerHTML = '';
+
+  const matchIndexByOpponent = {};
+  MATCHES.forEach((m, i) => { matchIndexByOpponent[normalizeTeam(m.opponent)] = i; });
 
   const all = typeof LEAGUE_MATCHES !== 'undefined' ? LEAGUE_MATCHES : [];
   if (!all.length) {
@@ -459,11 +466,20 @@ function renderLeagueMatches() {
       const middle    = isPlayed
         ? `<strong>${m.scoreHome} – ${m.scoreAway}</strong>`
         : `<span style="color:var(--muted);">${m.date}${m.time ? ' · ' + m.time : ''}</span>`;
+
+      let matchIdx;
+      if (isPlayed && (homeSelf || awaySelf)) {
+        const opponent = homeSelf ? m.away : m.home;
+        matchIdx = matchIndexByOpponent[normalizeTeam(opponent)];
+      }
+      const clickable = matchIdx !== undefined;
+
       return `
-        <tr>
+        <tr${clickable ? ` class="match-row" onclick="openMatchModal(${matchIdx})"` : ''}>
           <td${homeSelf ? ' style="color:var(--gold);font-weight:700;"' : ''}>${m.home}</td>
           <td>${middle}</td>
           <td${awaySelf ? ' style="color:var(--gold);font-weight:700;"' : ''}>${m.away}</td>
+          <td>${clickable ? '<a class="details-link" href="#">Bekijk details</a>' : ''}</td>
         </tr>`;
     }).join('');
 
@@ -471,7 +487,7 @@ function renderLeagueMatches() {
       <h3>Week ${week}${bye ? ` <span style="color:var(--muted);font-weight:400;font-size:0.8rem;">(vrij: ${bye.bye})</span>` : ''}</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Thuis</th><th>Score</th><th>Uit</th></tr></thead>
+          <thead><tr><th>Thuis</th><th>Score</th><th>Uit</th><th></th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>`;
