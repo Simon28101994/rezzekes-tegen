@@ -407,8 +407,9 @@ function sortTable(th, colIndex, type) {
 
 // ── All league matches ──────────────────────────────────────────
 function renderLeagueMatches() {
-  const wrap  = document.getElementById('league-matches-weeks');
-  const empty = document.getElementById('league-matches-empty');
+  const wrap   = document.getElementById('league-matches-weeks');
+  const empty  = document.getElementById('league-matches-empty');
+  const filter = document.getElementById('league-team-filter');
   wrap.innerHTML = '';
 
   const all = typeof LEAGUE_MATCHES !== 'undefined' ? LEAGUE_MATCHES : [];
@@ -417,15 +418,39 @@ function renderLeagueMatches() {
     empty.style.display = 'block';
     return;
   }
+
+  if (filter && !filter.dataset.populated) {
+    const teams = [...new Set(all.flatMap(m => [m.home, m.away, m.bye].filter(Boolean)))].sort();
+    filter.insertAdjacentHTML('beforeend', teams.map(t => `<option value="${t}">${t}</option>`).join(''));
+    filter.dataset.populated = 'true';
+  }
+  const selectedTeam = filter ? filter.value : '';
+
+  let weeks = [...new Set(all.map(m => m.week))].sort((a, b) => b - a);
+  if (selectedTeam) {
+    weeks = weeks.filter(week => all.some(m => m.week === week &&
+      (m.home === selectedTeam || m.away === selectedTeam || m.bye === selectedTeam)));
+  }
+
+  if (!weeks.length) {
+    wrap.style.display  = 'none';
+    empty.style.display = 'block';
+    return;
+  }
   wrap.style.display  = 'block';
   empty.style.display = 'none';
 
-  const weeks = [...new Set(all.map(m => m.week))].sort((a, b) => b - a);
-
   wrap.innerHTML = weeks.map(week => {
-    const games = all.filter(m => m.week === week);
+    let games = all.filter(m => m.week === week);
+    if (selectedTeam) {
+      games = games.filter(m => m.home === selectedTeam || m.away === selectedTeam || m.bye === selectedTeam);
+    }
     const bye   = games.find(m => m.bye);
     const played = games.filter(m => !m.bye);
+
+    if (selectedTeam && bye) {
+      return `<h3>Week ${week}</h3><p style="color:var(--muted);">Vrij deze week.</p>`;
+    }
 
     const rows = played.map(m => {
       const homeSelf = m.home === 'REZZEKES TEGEN';

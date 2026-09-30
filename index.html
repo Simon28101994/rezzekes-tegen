@@ -120,6 +120,26 @@
       letter-spacing: .5px;
     }
 
+    /* ── League matches filter ── */
+    .league-filter {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+    }
+    .league-filter label { color: var(--muted); }
+    .league-filter select {
+      background: var(--mid);
+      color: var(--text);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: .4rem .6rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+    .league-filter select:focus { outline: 1px solid var(--gold); }
+
     /* ── Upcoming games ── */
     .upcoming-grid {
       display: grid;
@@ -500,6 +520,12 @@
 ══════════════════════════════════════════ -->
 <section id="tab-league-matches" class="tab-panel">
   <h2>Alle wedstrijden</h2>
+  <div class="league-filter">
+    <label for="league-team-filter">Filter op ploeg:</label>
+    <select id="league-team-filter" onchange="renderLeagueMatches()">
+      <option value="">Alle ploegen</option>
+    </select>
+  </div>
   <div id="league-matches-weeks"></div>
   <div id="league-matches-empty" class="empty" style="display:none">
     <span>📅</span>Nog geen wedstrijden gespeeld.
