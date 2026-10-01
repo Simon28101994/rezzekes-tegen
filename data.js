@@ -56,19 +56,19 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  publishedDate: '27/09/2026',
+  publishedDate: '30/09/2026',
   teams: [
-    { pos:  1, name: "LA FAMILIA",       gsp: 4, gew: 3, gel: 1, verl: 0, goalsFor: 47, goalsAgainst: 10, saldo:  37, ptn: 10 },
-    { pos:  2, name: "BALKANOS",         gsp: 4, gew: 3, gel: 1, verl: 0, goalsFor: 27, goalsAgainst: 11, saldo:  16, ptn:  9 },
-    { pos:  3, name: "DE WEKE TINGELS",  gsp: 3, gew: 3, gel: 0, verl: 0, goalsFor: 40, goalsAgainst: 11, saldo:  29, ptn:  9 },
+    { pos:  1, name: "DE WEKE TINGELS",  gsp: 4, gew: 4, gel: 0, verl: 0, goalsFor: 47, goalsAgainst: 15, saldo:  32, ptn: 12 },
+    { pos:  2, name: "LA FAMILIA",       gsp: 4, gew: 3, gel: 1, verl: 0, goalsFor: 47, goalsAgainst: 10, saldo:  37, ptn: 10 },
+    { pos:  3, name: "BALKANOS",         gsp: 4, gew: 3, gel: 1, verl: 0, goalsFor: 27, goalsAgainst: 11, saldo:  16, ptn: 10 },
     { pos:  4, name: "COCKY'S",          gsp: 5, gew: 3, gel: 0, verl: 2, goalsFor: 44, goalsAgainst: 29, saldo:  15, ptn:  9 },
     { pos:  5, name: "POTTEKESTAMP",     gsp: 3, gew: 2, gel: 1, verl: 0, goalsFor: 21, goalsAgainst:  9, saldo:  12, ptn:  7 },
-    { pos:  6, name: "BIEMEN",           gsp: 2, gew: 2, gel: 0, verl: 0, goalsFor: 24, goalsAgainst:  4, saldo:  20, ptn:  6 },
-    { pos:  7, name: "REZZEKES TEGEN",   gsp: 3, gew: 1, gel: 0, verl: 2, goalsFor: 19, goalsAgainst: 18, saldo:   1, ptn:  3 },
+    { pos:  6, name: "BIEMEN",           gsp: 4, gew: 2, gel: 0, verl: 1, goalsFor: 28, goalsAgainst: 11, saldo:  17, ptn:  6 },
+    { pos:  7, name: "REZZEKES TEGEN",   gsp: 4, gew: 2, gel: 0, verl: 2, goalsFor: 28, goalsAgainst: 23, saldo:   5, ptn:  6 },
     { pos:  8, name: "GALACTICOS",       gsp: 4, gew: 0, gel: 1, verl: 3, goalsFor: 14, goalsAgainst: 22, saldo:  -8, ptn:  1 },
     { pos:  9, name: "STB85",            gsp: 4, gew: 0, gel: 1, verl: 3, goalsFor: 12, goalsAgainst: 41, saldo: -29, ptn:  1 },
     { pos: 10, name: "BLACK'XTRAS",      gsp: 5, gew: 0, gel: 1, verl: 4, goalsFor: 13, goalsAgainst: 74, saldo: -61, ptn:  1 },
-    { pos: 11, name: "DE SKOETEN",       gsp: 3, gew: 0, gel: 0, verl: 3, goalsFor:  5, goalsAgainst: 37, saldo: -32, ptn:  0 },
+    { pos: 11, name: "DE SKOETEN",       gsp: 4, gew: 0, gel: 0, verl: 4, goalsFor: 10, goalsAgainst: 46, saldo: -36, ptn:  0 },
   ]
 };
 
@@ -107,7 +107,7 @@ const LEAGUE_MATCHES = [
   { week: 5, home: 'BALKANOS',    away: 'GALACTICOS',      scoreHome:  5, scoreAway:  3 },
   { week: 5, home: 'STB85',       away: 'LA FAMILIA',      scoreHome:  0, scoreAway:  9 },
   { week: 5, home: 'REZZEKES TEGEN', away: 'DE SKOETEN',   scoreHome:  9, scoreAway:  5 },
-  { week: 5, home: 'BIEMEN',      away: 'DE WEKE TINGELS', date: '30/09/2026', time: '22:00' },
+  { week: 5, home: 'BIEMEN',      away: 'DE WEKE TINGELS', scoreHome:  4, scoreAway:  7 },
 
   { week: 6, bye: 'DE WEKE TINGELS' },
   { week: 6, home: 'BALKANOS',    away: "BLACK'XTRAS",     date: '05/10/2026', time: '20:00' },
