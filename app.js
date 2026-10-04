@@ -448,6 +448,7 @@ function renderLeagueMatches() {
   empty.style.display = 'none';
 
   wrap.innerHTML = weeks.map(week => {
+    const weekLabel = (all.find(m => m.week === week && m.label) || {}).label || `Week ${week}`;
     let games = all.filter(m => m.week === week);
     if (selectedTeam) {
       games = games.filter(m => m.home === selectedTeam || m.away === selectedTeam || m.bye === selectedTeam);
@@ -456,7 +457,7 @@ function renderLeagueMatches() {
     const played = games.filter(m => !m.bye);
 
     if (selectedTeam && bye) {
-      return `<h3>Week ${week}</h3><p style="color:var(--muted);">Vrij deze week.</p>`;
+      return `<h3>${weekLabel}</h3><p style="color:var(--muted);">Vrij deze week.</p>`;
     }
 
     const rows = played.map(m => {
@@ -484,7 +485,7 @@ function renderLeagueMatches() {
     }).join('');
 
     return `
-      <h3>Week ${week}${bye ? ` <span style="color:var(--muted);font-weight:400;font-size:0.8rem;">(vrij: ${bye.bye})</span>` : ''}</h3>
+      <h3>${weekLabel}${bye ? ` <span style="color:var(--muted);font-weight:400;font-size:0.8rem;">(vrij: ${bye.bye})</span>` : ''}</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Thuis</th><th>Score</th><th>Uit</th><th></th></tr></thead>
