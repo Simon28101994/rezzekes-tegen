@@ -18,7 +18,10 @@ dependencies — just `index.html` (structure + all CSS inline), `app.js`
   this locally — always source it from the latest screenshot/table given.
 - `LEAGUE_MATCHES` – every match in the competition (not just ours), grouped
   by `week`, plus a `{ week, bye: 'TEAM' }` entry for the team sitting out
-  that week. Sourced from the league's own weekly results list.
+  that week. Sourced from the league's own weekly results list. Entries
+  with `date`/`time` and no score are future fixtures: they also feed the
+  Agenda tab (`.ics` download). A catch-up round uses a fractional `week`
+  (e.g. `9.5`) plus a `label` on one of its entries.
 
 Everything else (`app.js`, the HTML structure) rarely needs touching for a
 routine data update.

@@ -495,6 +495,160 @@ function renderLeagueMatches() {
   }).join('');
 }
 
+// ── Calendar export (.ics) ───────────────────────────────────
+let calVisible = [];
+const calSelected = new Set();
+
+function weekLabelFor(week) {
+  const hit = LEAGUE_MATCHES.find(m => m.week === week && m.label);
+  return hit ? hit.label : `Week ${week}`;
+}
+
+function futureLeagueGames() {
+  const now = new Date();
+  return (typeof LEAGUE_MATCHES !== 'undefined' ? LEAGUE_MATCHES : [])
+    .filter(m => m.home && m.date && m.scoreHome === undefined && parseDateTime(m.date, m.time) >= now)
+    .map(m => ({
+      ...m,
+      start: parseDateTime(m.date, m.time),
+      id: `${m.week}|${m.home}|${m.away}`,
+      weekLabel: weekLabelFor(m.week),
+    }))
+    .sort((a, b) => a.start - b.start);
+}
+
+function renderCalendar(resetSelection) {
+  const filter = document.getElementById('cal-team-filter');
+  const list   = document.getElementById('cal-list');
+  const empty  = document.getElementById('cal-empty');
+  if (!filter) return;
+
+  if (!filter.dataset.populated) {
+    const teams = [...new Set(LEAGUE_MATCHES.flatMap(m => [m.home, m.away].filter(Boolean)))].sort();
+    filter.innerHTML = '<option value="">Alle ploegen</option>' +
+      teams.map(t => `<option value="${t}"${t === 'REZZEKES TEGEN' ? ' selected' : ''}>${t}</option>`).join('');
+    filter.dataset.populated = 'true';
+  }
+
+  const team  = filter.value;
+  const games = futureLeagueGames();
+  calVisible  = team ? games.filter(g => g.home === team || g.away === team) : games;
+
+  if (resetSelection) {
+    calSelected.clear();
+    calVisible.forEach(g => calSelected.add(g.id));
+  }
+
+  empty.style.display = calVisible.length ? 'none' : 'block';
+  const hl = t => t === 'REZZEKES TEGEN' ? `<span style="color:var(--gold);font-weight:700;">${t}</span>` : t;
+  list.innerHTML = calVisible.map((g, i) => `
+    <label class="cal-item">
+      <input type="checkbox" data-i="${i}"${calSelected.has(g.id) ? ' checked' : ''} />
+      <span class="cal-when">${dayAbbrev(g.date)} ${g.date} · ${g.time}</span>
+      <span class="cal-teams">${hl(g.home)} – ${hl(g.away)}</span>
+      <span class="cal-week">${g.weekLabel}</span>
+    </label>`).join('');
+  updateCalButton();
+}
+
+function updateCalButton() {
+  const n   = calVisible.filter(g => calSelected.has(g.id)).length;
+  const btn = document.getElementById('cal-download');
+  btn.textContent = `Download .ics (${n})`;
+  btn.disabled    = n === 0;
+}
+
+function calSelectAll(on) {
+  calVisible.forEach(g => on ? calSelected.add(g.id) : calSelected.delete(g.id));
+  document.querySelectorAll('#cal-list input[type=checkbox]').forEach(cb => { cb.checked = on; });
+  updateCalButton();
+}
+
+document.getElementById('cal-list').addEventListener('change', e => {
+  const g = calVisible[e.target.dataset.i];
+  if (!g) return;
+  if (e.target.checked) calSelected.add(g.id); else calSelected.delete(g.id);
+  updateCalButton();
+});
+
+function icsEscape(s) {
+  return String(s).replace(/\\/g, '\\\\').replace(/;/g, '\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+}
+
+function icsFold(line) {
+  const out = [];
+  while (line.length > 75) { out.push(line.slice(0, 75)); line = ' ' + line.slice(75); }
+  out.push(line);
+  return out.join('\r\n');
+}
+
+function icsLocal(d) {
+  const p = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}T${p(d.getHours())}${p(d.getMinutes())}00`;
+}
+
+function buildIcs(games, calName) {
+  const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Rezzekes Tegen//Wedstrijden//NL',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    `X-WR-CALNAME:${icsEscape(calName)}`,
+    'X-WR-TIMEZONE:Europe/Brussels',
+    'BEGIN:VTIMEZONE',
+    'TZID:Europe/Brussels',
+    'BEGIN:STANDARD',
+    'DTSTART:19701025T030000',
+    'TZOFFSETFROM:+0200',
+    'TZOFFSETTO:+0100',
+    'TZNAME:CET',
+    'RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU',
+    'END:STANDARD',
+    'BEGIN:DAYLIGHT',
+    'DTSTART:19700329T020000',
+    'TZOFFSETFROM:+0100',
+    'TZOFFSETTO:+0200',
+    'TZNAME:CEST',
+    'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU',
+    'END:DAYLIGHT',
+    'END:VTIMEZONE',
+  ];
+  games.forEach(g => {
+    const s = g.start;
+    const e = new Date(s.getFullYear(), s.getMonth(), s.getDate(), s.getHours() + 1, s.getMinutes());
+    lines.push(
+      'BEGIN:VEVENT',
+      `UID:rt-w${g.week}-${normalizeTeam(g.home)}-${normalizeTeam(g.away)}@rezzekes-tegen`,
+      `DTSTAMP:${stamp}`,
+      `DTSTART;TZID=Europe/Brussels:${icsLocal(s)}`,
+      `DTEND;TZID=Europe/Brussels:${icsLocal(e)}`,
+      `SUMMARY:${icsEscape(`${g.home} - ${g.away}`)}`,
+      `DESCRIPTION:${icsEscape(g.weekLabel)}`,
+      'END:VEVENT'
+    );
+  });
+  lines.push('END:VCALENDAR');
+  return lines.map(icsFold).join('\r\n') + '\r\n';
+}
+
+function downloadIcs() {
+  const games = calVisible.filter(g => calSelected.has(g.id));
+  if (!games.length) return;
+  const team = document.getElementById('cal-team-filter').value;
+  const name = team ? `Wedstrijden ${team}` : 'Wedstrijden alle ploegen';
+  const blob = new Blob([buildIcs(games, name)], { type: 'text/calendar;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `${name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.ics`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 // ── Tab switching ─────────────────────────────────────────────
 function openTab(e, id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -514,6 +668,7 @@ function openTab(e, id) {
   renderCards(stats);
   renderLeaderboard();
   renderLeagueMatches();
+  renderCalendar(true);
   loadSponsors();
 })();
 
