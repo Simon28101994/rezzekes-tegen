@@ -268,8 +268,8 @@ const MATCHES = [
     goalsAgainst: 5,
     players: [
       { nr:  1, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
-      { nr:  2, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Matthias Bonte
-      { nr:  3, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
+      { nr:  2, present: true,  goals: 3, yellowCards: 1, redCards: 0 }, // Matthias Bonte
+      { nr:  3, present: true,  goals: 0, yellowCards: 1, redCards: 0 }, // Yune De Donder
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
