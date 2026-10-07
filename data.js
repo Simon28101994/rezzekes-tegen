@@ -58,9 +58,7 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  // Computed locally: official 30/09 table + week 6 results played on 05/10.
-  // Replace with the real published table once available.
-  publishedDate: '06/10/2026',
+  publishedDate: '05/10/2026',
   teams: [
     { pos:  1, name: "BALKANOS",       gsp: 5, gew: 4, gel: 1, verl: 0, goalsFor: 43, goalsAgainst: 15, saldo:  28, ptn: 13 },
     { pos:  2, name: "COCKY'S",        gsp: 6, gew: 4, gel: 0, verl: 2, goalsFor: 70, goalsAgainst: 30, saldo:  40, ptn: 12 },
@@ -68,7 +66,7 @@ const LEADERBOARD = {
     { pos:  4, name: "LA FAMILIA",     gsp: 4, gew: 3, gel: 1, verl: 0, goalsFor: 47, goalsAgainst: 10, saldo:  37, ptn: 10 },
     { pos:  5, name: "REZZEKES TEGEN", gsp: 5, gew: 3, gel: 0, verl: 2, goalsFor: 36, goalsAgainst: 28, saldo:   8, ptn:  9 },
     { pos:  6, name: "POTTEKESTAMP",   gsp: 3, gew: 2, gel: 1, verl: 0, goalsFor: 21, goalsAgainst:  9, saldo:  12, ptn:  7 },
-    { pos:  7, name: "BIEMEN",         gsp: 4, gew: 2, gel: 0, verl: 1, goalsFor: 28, goalsAgainst: 11, saldo:  17, ptn:  6 },
+    { pos:  7, name: "BIEMEN",         gsp: 3, gew: 2, gel: 0, verl: 1, goalsFor: 28, goalsAgainst: 11, saldo:  17, ptn:  6 },
     { pos:  8, name: "GALACTICOS",     gsp: 5, gew: 0, gel: 1, verl: 4, goalsFor: 19, goalsAgainst: 30, saldo: -11, ptn:  1 },
     { pos:  9, name: "STB85",          gsp: 5, gew: 0, gel: 1, verl: 4, goalsFor: 13, goalsAgainst: 67, saldo: -54, ptn:  1 },
     { pos: 10, name: "BLACK'XTRAS",    gsp: 6, gew: 0, gel: 1, verl: 5, goalsFor: 17, goalsAgainst: 90, saldo: -73, ptn:  1 },
