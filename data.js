@@ -56,19 +56,19 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  // Computed locally: official 12-10 table + week 7 results played on 14/10.
+  // Computed locally: official 12-10 table + the week 7 and week 8 results played so far.
   // Replace with the real published table once available.
-  publishedDate: '14/10/2026',
+  publishedDate: '19/10/2026',
   teams: [
     { pos:  1, name: "BALKANOS",        gsp: 6, gew: 5, gel: 1, verl: 0, goalsFor: 57, goalsAgainst: 17, saldo:  40, ptn: 16 },
-    { pos:  2, name: "DE WEKE TINGELS", gsp: 5, gew: 5, gel: 0, verl: 0, goalsFor: 53, goalsAgainst: 18, saldo:  35, ptn: 15 },
-    { pos:  3, name: "POTTEKESTAMP",    gsp: 5, gew: 4, gel: 1, verl: 0, goalsFor: 45, goalsAgainst: 19, saldo:  26, ptn: 13 },
-    { pos:  4, name: "COCKY'S",         gsp: 7, gew: 4, gel: 0, verl: 3, goalsFor: 72, goalsAgainst: 35, saldo:  37, ptn: 12 },
-    { pos:  5, name: "REZZEKES TEGEN",  gsp: 6, gew: 4, gel: 0, verl: 2, goalsFor: 61, goalsAgainst: 28, saldo:  33, ptn: 12 },
+    { pos:  2, name: "REZZEKES TEGEN",  gsp: 7, gew: 5, gel: 0, verl: 2, goalsFor: 91, goalsAgainst: 29, saldo:  62, ptn: 15 },
+    { pos:  3, name: "DE WEKE TINGELS", gsp: 5, gew: 5, gel: 0, verl: 0, goalsFor: 53, goalsAgainst: 18, saldo:  35, ptn: 15 },
+    { pos:  4, name: "POTTEKESTAMP",    gsp: 5, gew: 4, gel: 1, verl: 0, goalsFor: 45, goalsAgainst: 19, saldo:  26, ptn: 13 },
+    { pos:  5, name: "COCKY'S",         gsp: 7, gew: 4, gel: 0, verl: 3, goalsFor: 72, goalsAgainst: 35, saldo:  37, ptn: 12 },
     { pos:  6, name: "BIEMEN",          gsp: 5, gew: 4, gel: 0, verl: 1, goalsFor: 37, goalsAgainst: 14, saldo:  23, ptn: 12 },
     { pos:  7, name: "LA FAMILIA",      gsp: 6, gew: 3, gel: 1, verl: 2, goalsFor: 51, goalsAgainst: 20, saldo:  31, ptn: 10 },
     { pos:  8, name: "GALACTICOS",      gsp: 6, gew: 0, gel: 1, verl: 5, goalsFor: 23, goalsAgainst: 41, saldo: -18, ptn:  1 },
-    { pos:  9, name: "STB85",           gsp: 6, gew: 0, gel: 1, verl: 5, goalsFor: 15, goalsAgainst: 81, saldo: -76, ptn:  1 },
+    { pos:  9, name: "STB85",           gsp: 7, gew: 0, gel: 1, verl: 6, goalsFor: 16, goalsAgainst: 111, saldo: -95, ptn:  1 },
     { pos: 10, name: "BLACK'XTRAS",     gsp: 7, gew: 0, gel: 1, verl: 6, goalsFor: 17, goalsAgainst: 115, saldo: -98, ptn:  1 },
     { pos: 11, name: "DE SKOETEN",      gsp: 5, gew: 0, gel: 0, verl: 5, goalsFor: 16, goalsAgainst: 59, saldo: -43, ptn:  0 },
   ]
@@ -318,11 +318,11 @@ const MATCHES = [
     goalsAgainst: 1,
     players: [
       { nr:  1, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
-      { nr:  2, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Matthias Bonte
-      { nr:  3, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
+      { nr:  2, present: true,  goals: 7, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  3, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Yune De Donder
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
-      { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
+      { nr:  6, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
       { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
