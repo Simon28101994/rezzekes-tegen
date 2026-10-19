@@ -50,7 +50,6 @@ const PLAYERS = [
 // and add the result as a new entry in MATCHES below.
 // Each game: { date: 'DD/MM/YYYY', time: 'HH:MM', opponent: 'Club naam', home: true/false }
 const UPCOMING_GAMES = [
-  { date: '19/10/2026', time: '20:00', opponent: 'STB85',        home: true  },
   { date: '26/10/2026', time: '20:00', opponent: 'Biemen',          home: false },
   { date: '16/11/2026', time: '21:00', opponent: 'De Weke Tingels', home: false },
   { date: '23/11/2026', time: '22:00', opponent: 'La Familia',      home: false },
@@ -127,7 +126,7 @@ const LEAGUE_MATCHES = [
   { week: 7, home: 'DE WEKE TINGELS', away: 'LA FAMILIA',  scoreHome:  6, scoreAway:  3 },
 
   { week: 8, bye: 'LA FAMILIA' },
-  { week: 8, home: 'REZZEKES TEGEN', away: 'STB85',        date: '19/10/2026', time: '20:00' },
+  { week: 8, home: 'REZZEKES TEGEN', away: 'STB85',        scoreHome: 30, scoreAway: 1 },
   { week: 8, home: 'BIEMEN',      away: 'BALKANOS',        date: '19/10/2026', time: '21:00' },
   { week: 8, home: 'POTTEKESTAMP', away: "BLACK'XTRAS",    date: '19/10/2026', time: '22:00' },
   { week: 8, home: 'DE WEKE TINGELS', away: "COCKY'S",     date: '21/10/2026', time: '21:00' },
@@ -309,6 +308,31 @@ const MATCHES = [
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
       { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
       { nr: 91, present: true,  goals: 8, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
+    ]
+  },
+  // ── Match 7 – 19/10/2026 ──────────────────────────────────
+  {
+    date: '19/10/2026',
+    opponent: 'STB85',
+    goalsFor: 30,
+    goalsAgainst: 1,
+    players: [
+      { nr:  1, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
+      { nr:  2, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  3, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
+      { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
+      { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
+      { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
+      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
+      { nr:  8, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
+      { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
+      { nr: 10, present: true,  goals: 8, yellowCards: 0, redCards: 0 }, // Joran Lemaire
+      { nr: 11, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen Somers
+      { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
+      { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
+      { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 91, present: true,  goals: 10, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
   // Add a match object here after each game:
