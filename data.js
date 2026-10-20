@@ -58,18 +58,18 @@ const UPCOMING_GAMES = [
 const LEADERBOARD = {
   // Computed locally: official 12-10 table + the week 7 and week 8 results played so far.
   // Replace with the real published table once available.
-  publishedDate: '19/10/2026',
+  publishedDate: '20/10/2026',
   teams: [
-    { pos:  1, name: "BALKANOS",        gsp: 6, gew: 5, gel: 1, verl: 0, goalsFor: 57, goalsAgainst: 17, saldo:  40, ptn: 16 },
-    { pos:  2, name: "REZZEKES TEGEN",  gsp: 7, gew: 5, gel: 0, verl: 2, goalsFor: 91, goalsAgainst: 29, saldo:  62, ptn: 15 },
-    { pos:  3, name: "DE WEKE TINGELS", gsp: 5, gew: 5, gel: 0, verl: 0, goalsFor: 53, goalsAgainst: 18, saldo:  35, ptn: 15 },
-    { pos:  4, name: "POTTEKESTAMP",    gsp: 5, gew: 4, gel: 1, verl: 0, goalsFor: 45, goalsAgainst: 19, saldo:  26, ptn: 13 },
+    { pos:  1, name: "BALKANOS",        gsp: 7, gew: 6, gel: 1, verl: 0, goalsFor: 67, goalsAgainst: 24, saldo:  43, ptn: 19 },
+    { pos:  2, name: "POTTEKESTAMP",    gsp: 6, gew: 5, gel: 1, verl: 0, goalsFor: 65, goalsAgainst: 20, saldo:  45, ptn: 16 },
+    { pos:  3, name: "REZZEKES TEGEN",  gsp: 7, gew: 5, gel: 0, verl: 2, goalsFor: 91, goalsAgainst: 29, saldo:  62, ptn: 15 },
+    { pos:  4, name: "DE WEKE TINGELS", gsp: 5, gew: 5, gel: 0, verl: 0, goalsFor: 53, goalsAgainst: 18, saldo:  35, ptn: 15 },
     { pos:  5, name: "COCKY'S",         gsp: 7, gew: 4, gel: 0, verl: 3, goalsFor: 72, goalsAgainst: 35, saldo:  37, ptn: 12 },
-    { pos:  6, name: "BIEMEN",          gsp: 5, gew: 4, gel: 0, verl: 1, goalsFor: 37, goalsAgainst: 14, saldo:  23, ptn: 12 },
+    { pos:  6, name: "BIEMEN",          gsp: 6, gew: 4, gel: 0, verl: 2, goalsFor: 44, goalsAgainst: 24, saldo:  20, ptn: 12 },
     { pos:  7, name: "LA FAMILIA",      gsp: 6, gew: 3, gel: 1, verl: 2, goalsFor: 51, goalsAgainst: 20, saldo:  31, ptn: 10 },
     { pos:  8, name: "GALACTICOS",      gsp: 6, gew: 0, gel: 1, verl: 5, goalsFor: 23, goalsAgainst: 41, saldo: -18, ptn:  1 },
     { pos:  9, name: "STB85",           gsp: 7, gew: 0, gel: 1, verl: 6, goalsFor: 16, goalsAgainst: 111, saldo: -95, ptn:  1 },
-    { pos: 10, name: "BLACK'XTRAS",     gsp: 7, gew: 0, gel: 1, verl: 6, goalsFor: 17, goalsAgainst: 115, saldo: -98, ptn:  1 },
+    { pos: 10, name: "BLACK'XTRAS",     gsp: 8, gew: 0, gel: 1, verl: 7, goalsFor: 18, goalsAgainst: 135, saldo: -117, ptn:  1 },
     { pos: 11, name: "DE SKOETEN",      gsp: 5, gew: 0, gel: 0, verl: 5, goalsFor: 16, goalsAgainst: 59, saldo: -43, ptn:  0 },
   ]
 };
@@ -127,8 +127,8 @@ const LEAGUE_MATCHES = [
 
   { week: 8, bye: 'LA FAMILIA' },
   { week: 8, home: 'REZZEKES TEGEN', away: 'STB85',        scoreHome: 30, scoreAway: 1 },
-  { week: 8, home: 'BIEMEN',      away: 'BALKANOS',        date: '19/10/2026', time: '21:00' },
-  { week: 8, home: 'POTTEKESTAMP', away: "BLACK'XTRAS",    date: '19/10/2026', time: '22:00' },
+  { week: 8, home: 'BIEMEN',      away: 'BALKANOS',        scoreHome:  7, scoreAway: 10 },
+  { week: 8, home: 'POTTEKESTAMP', away: "BLACK'XTRAS",    scoreHome: 20, scoreAway:  1 },
   { week: 8, home: 'DE WEKE TINGELS', away: "COCKY'S",     date: '21/10/2026', time: '21:00' },
   { week: 8, home: 'DE SKOETEN',  away: 'GALACTICOS',      date: '21/10/2026', time: '22:00' },
 
