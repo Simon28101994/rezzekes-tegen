@@ -56,9 +56,7 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  // Computed locally: official 12-10 table + the week 7 and week 8 results played so far.
-  // Replace with the real published table once available.
-  publishedDate: '20/10/2026',
+  publishedDate: '19/10/2026',
   teams: [
     { pos:  1, name: "BALKANOS",        gsp: 7, gew: 6, gel: 1, verl: 0, goalsFor: 67, goalsAgainst: 24, saldo:  43, ptn: 19 },
     { pos:  2, name: "POTTEKESTAMP",    gsp: 6, gew: 5, gel: 1, verl: 0, goalsFor: 65, goalsAgainst: 20, saldo:  45, ptn: 16 },
