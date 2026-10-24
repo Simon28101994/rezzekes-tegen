@@ -30,7 +30,6 @@ const PLAYERS = [
   { nr:  4, firstName: 'Thomas',    lastName: 'Heyvaert'           },
   { nr:  5, firstName: 'Jeroen',    lastName: 'De Backer'          },
   { nr:  6, firstName: 'Jens',      lastName: 'Du Mongh'           },
-  { nr:  7, firstName: 'Lucas',     lastName: 'Lemaire'            },
   { nr:  8, firstName: 'Vincent',   lastName: 'De Spiegeleer'      },
   { nr:  9, firstName: 'Perry',     lastName: 'Van Den Branden'    },
   { nr: 10, firstName: 'Joran',     lastName: 'Lemaire'            },
@@ -38,7 +37,8 @@ const PLAYERS = [
   { nr: 12, firstName: 'Jens',      lastName: 'De Rycke'           },
   { nr: 13, firstName: 'Lucas',     lastName: 'Van Droogenbroeck'  },
   { nr: 14, firstName: 'Tayson',    lastName: 'Van Bellingen'      },
-  { nr: 16, firstName: 'Jonathan',  lastName: 'Van Laethem'        },
+  { nr: 16, firstName: 'Arno',      lastName: 'Buyl'               },
+  { nr: 17, firstName: 'Ozgur',     lastName: 'Kircil'             },
   { nr: 91, firstName: 'Kevin',     lastName: 'Vanhuffelen'        },
 ];
 
@@ -171,7 +171,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -179,7 +178,8 @@ const MATCHES = [
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: true,  goals: 5, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
@@ -196,7 +196,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -204,7 +203,8 @@ const MATCHES = [
       { nr: 12, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
@@ -221,7 +221,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -229,7 +228,8 @@ const MATCHES = [
       { nr: 12, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
@@ -246,7 +246,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -254,7 +253,8 @@ const MATCHES = [
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
@@ -271,7 +271,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: true,  goals: 2, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -279,7 +278,8 @@ const MATCHES = [
       { nr: 12, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
@@ -296,7 +296,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 4, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -304,7 +303,8 @@ const MATCHES = [
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: true,  goals: 8, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
@@ -321,7 +321,6 @@ const MATCHES = [
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  7, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Lemaire
       { nr:  8, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
       { nr: 10, present: true,  goals: 8, yellowCards: 0, redCards: 0 }, // Joran Lemaire
@@ -329,7 +328,8 @@ const MATCHES = [
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
       { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
-      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jonathan Van Laethem
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
       { nr: 91, present: true,  goals: 10, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
