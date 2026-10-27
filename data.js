@@ -332,6 +332,31 @@ const MATCHES = [
       { nr: 91, present: true,  goals: 10, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
     ]
   },
+  // ── Match 8 – 26/10/2026 ──────────────────────────────────
+  {
+    date: '26/10/2026',
+    opponent: 'Biemen',
+    goalsFor: 4,
+    goalsAgainst: 7,
+    players: [
+      { nr:  1, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
+      { nr:  2, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  3, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
+      { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
+      { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
+      { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
+      { nr:  8, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
+      { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
+      { nr: 10, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Joran Lemaire
+      { nr: 11, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen Somers
+      { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
+      { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
+      { nr: 14, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Tayson Van Bellingen
+      { nr: 16, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Arno Buyl
+      { nr: 17, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Ozgur Kircil
+      { nr: 91, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Kevin Vanhuffelen
+    ]
+  },
   // Add a match object here after each game:
   // {
   //   date: 'DD/MM/YYYY',
