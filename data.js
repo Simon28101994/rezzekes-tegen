@@ -55,19 +55,19 @@ const UPCOMING_GAMES = [
 ];
 
 const LEADERBOARD = {
-  publishedDate: '26/10/2026',
+  publishedDate: '29/10/2026',
   teams: [
     { pos:  1, name: "BALKANOS",        gsp: 8, gew: 7, gel: 1, verl: 0, goalsFor: 74, goalsAgainst: 29, saldo:  45, ptn: 22 },
     { pos:  2, name: "POTTEKESTAMP",    gsp: 7, gew: 6, gel: 1, verl: 0, goalsFor: 76, goalsAgainst: 21, saldo:  55, ptn: 19 },
     { pos:  3, name: "DE WEKE TINGELS", gsp: 7, gew: 6, gel: 0, verl: 1, goalsFor: 68, goalsAgainst: 25, saldo:  43, ptn: 18 },
     { pos:  4, name: "REZZEKES TEGEN",  gsp: 8, gew: 5, gel: 0, verl: 3, goalsFor: 95, goalsAgainst: 36, saldo:  59, ptn: 15 },
     { pos:  5, name: "BIEMEN",          gsp: 7, gew: 5, gel: 0, verl: 2, goalsFor: 51, goalsAgainst: 28, saldo:  23, ptn: 15 },
-    { pos:  6, name: "COCKY'S",         gsp: 8, gew: 4, gel: 0, verl: 4, goalsFor: 72, goalsAgainst: 45, saldo:  27, ptn: 12 },
-    { pos:  7, name: "LA FAMILIA",      gsp: 6, gew: 3, gel: 1, verl: 2, goalsFor: 51, goalsAgainst: 20, saldo:  31, ptn: 10 },
-    { pos:  8, name: "DE SKOETEN",      gsp: 6, gew: 1, gel: 0, verl: 5, goalsFor: 21, goalsAgainst: 63, saldo: -42, ptn:  3 },
+    { pos:  6, name: "LA FAMILIA",      gsp: 7, gew: 4, gel: 1, verl: 2, goalsFor: 55, goalsAgainst: 23, saldo:  32, ptn: 13 },
+    { pos:  7, name: "COCKY'S",         gsp: 9, gew: 4, gel: 0, verl: 5, goalsFor: 75, goalsAgainst: 49, saldo:  26, ptn: 12 },
+    { pos:  8, name: "DE SKOETEN",      gsp: 7, gew: 2, gel: 0, verl: 5, goalsFor: 31, goalsAgainst: 66, saldo: -35, ptn:  6 },
     { pos:  9, name: "GALACTICOS",      gsp: 7, gew: 0, gel: 1, verl: 6, goalsFor: 27, goalsAgainst: 46, saldo: -19, ptn:  1 },
     { pos: 10, name: "STB85",           gsp: 8, gew: 0, gel: 1, verl: 7, goalsFor: 17, goalsAgainst: 122, saldo: -105, ptn:  1 },
-    { pos: 11, name: "BLACK'XTRAS",     gsp: 8, gew: 0, gel: 1, verl: 7, goalsFor: 18, goalsAgainst: 135, saldo: -117, ptn:  1 },
+    { pos: 11, name: "BLACK'XTRAS",     gsp: 9, gew: 0, gel: 1, verl: 8, goalsFor: 21, goalsAgainst: 145, saldo: -124, ptn:  1 },
   ]
 };
 
@@ -133,8 +133,8 @@ const LEAGUE_MATCHES = [
   { week: 9, home: 'BIEMEN',      away: 'REZZEKES TEGEN',  scoreHome:  7, scoreAway:  4 },
   { week: 9, home: 'POTTEKESTAMP', away: 'STB85',          scoreHome: 11, scoreAway:  1 },
   { week: 9, home: 'DE WEKE TINGELS', away: 'BALKANOS',    scoreHome:  5, scoreAway:  7 },
-  { week: 9, home: 'DE SKOETEN',  away: "BLACK'XTRAS",     date: '28/10/2026', time: '21:00' },
-  { week: 9, home: 'LA FAMILIA',  away: "COCKY'S",         date: '28/10/2026', time: '22:00' },
+  { week: 9, home: 'DE SKOETEN',  away: "BLACK'XTRAS",     scoreHome: 10, scoreAway:  3 },
+  { week: 9, home: 'LA FAMILIA',  away: "COCKY'S",         scoreHome:  4, scoreAway:  3 },
 
   // Restweek 1 sits between week 9 and week 10 (week 9.5 only for sorting)
   { week: 9.5, label: 'Restweek 1', home: 'DE SKOETEN', away: 'DE WEKE TINGELS', date: '09/11/2026', time: '20:00' },
