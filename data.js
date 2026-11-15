@@ -52,6 +52,9 @@ const PLAYERS = [
 const UPCOMING_GAMES = [
   { date: '16/11/2026', time: '21:00', opponent: 'De Weke Tingels', home: false },
   { date: '23/11/2026', time: '22:00', opponent: 'La Familia',      home: false },
+  { date: '02/12/2026', time: '22:00', opponent: 'Balkanos',         home: true  },
+  { date: '16/12/2026', time: '22:00', opponent: 'Pottekestamp',     home: false },
+  { date: '21/12/2026', time: '22:00', opponent: 'Galacticos',       home: true  },
 ];
 
 const LEADERBOARD = {
@@ -154,6 +157,34 @@ const LEAGUE_MATCHES = [
   { week: 11, home: 'LA FAMILIA',  away: 'REZZEKES TEGEN', date: '23/11/2026', time: '22:00' },
   { week: 11, home: 'DE SKOETEN',  away: 'BIEMEN',         date: '25/11/2026', time: '21:00' },
   { week: 11, home: "COCKY'S",     away: 'BALKANOS',       date: '25/11/2026', time: '22:00' },
+
+  { week: 12, bye: 'STB85' },
+  { week: 12, home: 'DE SKOETEN',     away: 'LA FAMILIA',     date: '30/11/2026', time: '20:00' },
+  { week: 12, home: 'DE WEKE TINGELS', away: 'GALACTICOS',     date: '30/11/2026', time: '21:00' },
+  { week: 12, home: 'POTTEKESTAMP',   away: "COCKY'S",        date: '30/11/2026', time: '22:00' },
+  { week: 12, home: 'BIEMEN',         away: "BLACK'XTRAS",    date: '02/12/2026', time: '21:00' },
+  { week: 12, home: 'REZZEKES TEGEN', away: 'BALKANOS',       date: '02/12/2026', time: '22:00' },
+
+  { week: 13, bye: 'REZZEKES TEGEN' },
+  { week: 13, home: 'LA FAMILIA',     away: 'GALACTICOS',     date: '07/12/2026', time: '20:00' },
+  { week: 13, home: 'DE SKOETEN',     away: "COCKY'S",        date: '07/12/2026', time: '21:00' },
+  { week: 13, home: 'DE WEKE TINGELS', away: "BLACK'XTRAS",    date: '07/12/2026', time: '22:00' },
+  { week: 13, home: 'POTTEKESTAMP',   away: 'BALKANOS',       date: '09/12/2026', time: '21:00' },
+  { week: 13, home: 'BIEMEN',         away: 'STB85',          date: '09/12/2026', time: '22:00' },
+
+  { week: 14, bye: 'BIEMEN' },
+  { week: 14, home: 'GALACTICOS',     away: "COCKY'S",        date: '14/12/2026', time: '20:00' },
+  { week: 14, home: 'LA FAMILIA',     away: "BLACK'XTRAS",    date: '14/12/2026', time: '21:00' },
+  { week: 14, home: 'DE SKOETEN',     away: 'BALKANOS',       date: '14/12/2026', time: '22:00' },
+  { week: 14, home: 'DE WEKE TINGELS', away: 'STB85',          date: '16/12/2026', time: '21:00' },
+  { week: 14, home: 'POTTEKESTAMP',   away: 'REZZEKES TEGEN', date: '16/12/2026', time: '22:00' },
+
+  { week: 15, bye: 'DE WEKE TINGELS' },
+  { week: 15, home: 'BALKANOS',       away: "BLACK'XTRAS",    date: '21/12/2026', time: '20:00' },
+  { week: 15, home: 'STB85',          away: "COCKY'S",        date: '21/12/2026', time: '21:00' },
+  { week: 15, home: 'REZZEKES TEGEN', away: 'GALACTICOS',     date: '21/12/2026', time: '22:00' },
+  { week: 15, home: 'BIEMEN',         away: 'LA FAMILIA',     date: '06/01/2027', time: '21:00' },
+  { week: 15, home: 'POTTEKESTAMP',   away: 'DE SKOETEN',     date: '06/01/2027', time: '22:00' },
 ];
 
 const MATCHES = [
