@@ -388,7 +388,7 @@ const MATCHES = [
     ]
   },
   // ── Match 9 – 16/11/2026 ──────────────────────────────────
-  // TODO: 8 of 9 goals attributed; the scorer of the last goal is still unknown
+  // NOTE: last goal tentatively credited to Matthias (unconfirmed)
   {
     date: '16/11/2026',
     opponent: 'De Weke Tingels',
@@ -396,7 +396,7 @@ const MATCHES = [
     goalsAgainst: 14,
     players: [
       { nr:  1, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
-      { nr:  2, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  2, present: true,  goals: 4, yellowCards: 0, redCards: 0 }, // Matthias Bonte
       { nr:  3, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
