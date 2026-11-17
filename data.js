@@ -388,7 +388,7 @@ const MATCHES = [
     ]
   },
   // ── Match 9 – 16/11/2026 ──────────────────────────────────
-  // TODO: only Simon's goal known (1 of 9); other 8 scorers not yet provided
+  // TODO: 8 of 9 goals attributed; the scorer of the last goal is still unknown
   {
     date: '16/11/2026',
     opponent: 'De Weke Tingels',
@@ -396,14 +396,14 @@ const MATCHES = [
     goalsAgainst: 14,
     players: [
       { nr:  1, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Simon De Spiegeleer
-      { nr:  2, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Matthias Bonte
+      { nr:  2, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Matthias Bonte
       { nr:  3, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Yune De Donder
       { nr:  4, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Thomas Heyvaert
       { nr:  5, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen De Backer
       { nr:  6, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens Du Mongh
-      { nr:  8, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
+      { nr:  8, present: true,  goals: 3, yellowCards: 0, redCards: 0 }, // Vincent De Spiegeleer
       { nr:  9, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Perry Van Den Branden
-      { nr: 10, present: true,  goals: 0, yellowCards: 0, redCards: 0 }, // Joran Lemaire
+      { nr: 10, present: true,  goals: 1, yellowCards: 0, redCards: 0 }, // Joran Lemaire
       { nr: 11, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jeroen Somers
       { nr: 12, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Jens De Rycke
       { nr: 13, present: false, goals: 0, yellowCards: 0, redCards: 0 }, // Lucas Van Droogenbroeck
